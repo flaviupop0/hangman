@@ -12,7 +12,6 @@ function updateWordDisplay() {
 function chooseRandomWord() {
     selectedWord = words[Math.floor(Math.random() * words.length)];
     guessedWord = Array(selectedWord.length).fill("_");
-    console.log(selectedWord);
     updateWordDisplay();
 }
 
@@ -36,12 +35,12 @@ function generateLetterButtons() {
 function makeGuess(letter) {
     const buttonsContainer = document.querySelector(".buttons");
     const buttons = buttonsContainer.querySelectorAll("button");
+    let correctGuess = false;
     for (const button of buttons) {
         if (button.innerText === letter) {
             button.disabled = true;
         }
     }
-    let correctGuess = false;
     for (let i = 0; i < selectedWord.length; ++i) {
         if (selectedWord[i].toLowerCase() === letter.toLowerCase()) {
             guessedWord[i] = selectedWord[i];
@@ -72,7 +71,6 @@ function changeButtons(buttons, kind) {
 function draw(part) {
     const canvas = document.getElementById("hangman");
     const context = canvas.getContext("2d");
-
     switch (part) {
         case "gallows":
             context.strokeStyle = "#444";
@@ -86,7 +84,6 @@ function draw(part) {
             context.lineTo(100, 25);
             context.stroke();
             break;
-
         case "head":
             context.lineWidth = 5;
             context.beginPath();
@@ -94,35 +91,30 @@ function draw(part) {
             context.closePath();
             context.stroke();
             break;
-
         case "body":
             context.beginPath();
             context.moveTo(100, 75);
             context.lineTo(100, 140);
             context.stroke();
             break;
-
         case "rightHarm":
             context.beginPath();
             context.moveTo(100, 85);
             context.lineTo(60, 100);
             context.stroke();
             break;
-
         case "leftHarm":
             context.beginPath();
             context.moveTo(100, 85);
             context.lineTo(140, 100);
             context.stroke();
             break;
-
         case "rightLeg":
             context.beginPath();
             context.moveTo(100, 140);
             context.lineTo(80, 190);
             context.stroke();
             break;
-
         case "leftLeg":
             context.beginPath();
             context.moveTo(100, 140);
