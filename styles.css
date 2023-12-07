@@ -1,0 +1,45 @@
+@keyframes changeColor {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: green;
+    }
+}
+
+.buttons {
+    text-align: center;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+h1 {
+    animation: changeColor 5s linear infinite;
+    text-align: center;
+}
+
+#container {
+    text-align: center;
+    margin: 0px auto;
+}
+
+canvas {
+    text-align: center;
+}
+
+#word-display {
+    text-align: center;
+    font-size: 50px;
+    margin: 0px auto;
+}
+
+.reset-button {
+    text-align: center;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+}
