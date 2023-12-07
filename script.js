@@ -54,7 +54,7 @@ function makeGuess(letter) {
         }
     } else {
         draw(draws[++wrongTries]);
-        if (wrongTries >= draws.length - 3) {
+        if (wrongTries === draws.length - 3) {
             toggleErrorModal("lost");
             changeButtons(buttons, true);
         }
