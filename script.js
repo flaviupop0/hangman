@@ -22,9 +22,8 @@ function toggleErrorModal(errorType) {
 
 function generateLetterButtons() {
     const buttonsContainer = document.querySelector(".buttons");
-    const ACode = "A".charCodeAt(0);
     for (let i = 0; i < 26; ++i) {
-        const letter = String.fromCharCode(ACode + i);
+        const letter = String.fromCharCode("A".charCodeAt(0) + i);
         const button = document.createElement("button");
         button.innerText = letter;
         button.addEventListener("click", () => makeGuess(letter));
@@ -51,7 +50,7 @@ function makeGuess(letter) {
         updateWordDisplay();
         if (guessedWord.join("").toLowerCase() === selectedWord.toLowerCase()) {
             toggleErrorModal("win");
-            disableButtons(buttons, true);
+            changeButtons(buttons, true);
         }
     } else {
         draw(draws[++wrongTries]);
