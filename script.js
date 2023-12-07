@@ -1,4 +1,4 @@
-const words = ["car", "wrong", "perfect", "bear", "banana", "cat", "dog", "man", "woman", "life", "table"];
+const words = ["Car", "Wrong", "Perfect", "Bear", "Banana", "Cat", "Dog", "Man", "Woman", "Life", "Table", "Baby", "WellCode", "Like", "Gorgeous", "Football", "Soccer", "Ball", "Parrot", "Music", "Gun", "Weekend", "Saturday"];
 const draws = ["gallows", "head", "body", "rightHarm", "leftHarm", "rightLeg", "leftLeg", "rightFoot", "leftFoot"];
 let wrongTries = -1;
 let selectedWord = "";
